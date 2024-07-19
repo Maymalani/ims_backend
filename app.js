@@ -25,11 +25,6 @@ var corsOption = {
   credentials: true
 }
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", '*');
-  next();
-})
-
 app.use(cors(corsOption));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
