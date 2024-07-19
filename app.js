@@ -3,7 +3,7 @@ var express = require('express');
 var cors = require('cors');
 var app = express();
 require('dotenv').config();
-require('./dbConnection/dbConnect')
+// require('./dbConnection/dbConnect')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -20,10 +20,15 @@ var followupRouter = require('./routes/followup');
 var app = express();
 
 var corsOption = {
-  origin: "https://inquiry-management-system-nine.vercel.app",
+  origin: "http://localhost:3000",
   methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
   credentials: true
 }
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", '*');
+  next();
+})
 
 app.use(cors(corsOption));
 // view engine setup
@@ -61,10 +66,10 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
-const port = process.env.PORT || 4000;
+// const port = process.env.PORT || 4000;
 
-app.listen(port, () => {
-  console.log(`Port Running on ${port}`);
-})
+// app.listen(port, () => {
+//   console.log(`Port Running on ${port}`);
+// })
 
 module.exports = app;
