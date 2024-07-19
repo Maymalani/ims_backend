@@ -21,8 +21,6 @@ var app = express();
 
 var corsOption = {
   origin: "https://inquiry-management-system-nine.vercel.app",
-  methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
-  credentials: true
 }
 
 app.use(cors(corsOption));
