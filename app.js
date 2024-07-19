@@ -20,7 +20,7 @@ var followupRouter = require('./routes/followup');
 var app = express();
 
 var corsOption = {
-  origin: "http://localhost:3000",
+  origin: "https://inquiry-management-system-nine.vercel.app",
   methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
   credentials: true
 }
