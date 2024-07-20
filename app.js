@@ -28,7 +28,7 @@ var corsOption = {
 app.use(cors(corsOption));
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", 'https://inquiry-management-system-nine.vercel.app');
+  res.setHeader("Access-Control-Allow-Origin", '*');
   next();
 })
 // view engine setup
