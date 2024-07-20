@@ -21,9 +21,16 @@ var app = express();
 
 var corsOption = {
   origin: "https://inquiry-management-system-nine.vercel.app",
+  methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
+  credentialS: "true"
 }
 
 app.use(cors(corsOption));
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", 'https://inquiry-management-system-nine.vercel.app');
+  next();
+})
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
