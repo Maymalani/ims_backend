@@ -3,7 +3,7 @@ var express = require('express');
 var cors = require('cors');
 var app = express();
 require('dotenv').config();
-// require('./dbConnection/dbConnect')
+require('./dbConnection/dbConnect')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
