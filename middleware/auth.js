@@ -2,8 +2,7 @@ var jwt = require('jsonwebtoken');
 var Admin = require('../model/admin')
 
 exports.check_token = async (req, res, next) => {
-    jwt.verify(req.headers.authorization, "IMS");
-    next();
+    jwt.verify(req.headers.authorization, "IMS",next);
 }
 
 exports.adminMiddleWare = async (req, res, next) => {
